@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Neumorphic Calculator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="calculator neu">
+    <div class="top-bar">
+      <div class="mode-tabs">
+        <button data-mode="general" class="active">General</button>
+        <button data-mode="scientific">Scientific</button>
+        <button data-mode="business">Business</button>
+      </div>
+      <div class="toggle-container">
+        <select id="angleMode" class="angle-switch">
+          <option value="rad">Rad</option>
+          <option value="deg">Deg</option>
+        </select>
+        <!-- New Neumorphic Theme Toggle -->
+        <label class="toggle-neu">
+          <input type="checkbox" id="themeToggle">
+          <div class="indicator"></div>
+        </label>
+      </div>
+    </div>
+
+    <div class="display neu">
+      <div id="history"></div>
+      <div id="output">0</div>
+    </div>
+
+    <div class="buttons" id="btnContainer"></div>
+
+    <div class="history-panel neu" id="businessHistory" style="display:none;">
+      <input type="text" id="customerName" placeholder="Customer Name">
+      <ul id="historyList"></ul>
+      <button id="downloadCSV">Download CSV</button>
+      <button onclick="clearBusinessHistory()">Clear History</button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
